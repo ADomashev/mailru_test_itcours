@@ -13,4 +13,8 @@ public class TestLoginToEmail extends BaseTest{
 	public void testLoginEmail() {
 		Assert.assertEquals(steps.loginMail(LOGIN,PASS), expectedNameEmail);
 	}
+	@Test
+	public void  testSendMail () {
+		steps.writeMail();
+	}
 }

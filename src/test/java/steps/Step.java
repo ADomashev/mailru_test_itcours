@@ -3,6 +3,8 @@ package steps;
 import org.openqa.selenium.WebDriver;
 
 import driver.DriverSingleton;
+import pages.BoxMailPage;
+import pages.EmailWritePage;
 import pages.MainPage;
 
 public class Step {
@@ -22,7 +24,9 @@ public class Step {
 	
 	public String loginMail(String login, String pass) {
 		MainPage mainPage = new MainPage(driver);
+		mainPage.openPage();
 		mainPage.login(login, pass);
+//		TODO waits
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -31,4 +35,16 @@ public class Step {
 		}
 		return mainPage.getNameEmail();
 	}
+	
+//	String toWhom, String themeEmail, String textEmail
+	public void writeMail() {
+		
+		BoxMailPage boxMailPage = new BoxMailPage(driver);
+		boxMailPage.pressButtonWriteMail();
+		EmailWritePage  emailWritePage = new EmailWritePage(driver);
+		emailWritePage.writeEmail();
+	}
+	
+	
+	
 }

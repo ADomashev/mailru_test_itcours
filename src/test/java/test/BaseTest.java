@@ -6,7 +6,9 @@ import org.testng.annotations.BeforeTest;
 import steps.Step;
 
 public class BaseTest {
+	
 	protected Step steps; 
+	
 	@BeforeTest
 	public void initSteps() {
 		
