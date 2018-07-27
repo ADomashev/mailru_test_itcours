@@ -9,6 +9,9 @@ public class TestLoginToEmail extends BaseTest {
 	private static final String LOGIN = "tathtp";
 	private static final String PASS = "Klopik123";
 	private static final String EXP_EMAIL_ADDRESS = "alekseidomashevsky@gmail.com";
+	private static final String RECEPIENT_ADDRESS = "alekseidomashevsky@gmail.com";
+	private static final String THEME_LETTER = "HomeWork Selenium";
+	private static final String TEXT_LETTER = "It's my home work";
 
 	@Test
 	public void testLoginEmail() {
@@ -17,7 +20,7 @@ public class TestLoginToEmail extends BaseTest {
 
 	@Test
 	public void testSendMail() {
-		steps.writeMail();
-		Assert.assertEquals(steps.findLetter("alekseidomashevsky@gmail.com"), EXP_EMAIL_ADDRESS);
+		steps.writeLetter(RECEPIENT_ADDRESS,THEME_LETTER,TEXT_LETTER);
+		Assert.assertEquals(steps.findLetter(RECEPIENT_ADDRESS), EXP_EMAIL_ADDRESS);
 	}
 }

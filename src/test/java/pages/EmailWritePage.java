@@ -20,20 +20,20 @@ public class EmailWritePage extends BasePage {
 	}
 
 	// TODO Methods
-	public void writeLetter() {
+	public void writeLetter(String recipientAddress, String themeEmail, String textEmail) {
 		String frameBefore = driver.getWindowHandle();
 		elemToWhom = driver.findElement(By.xpath(prProvider.getProperty("elemToWhom")));
-		elemToWhom.sendKeys("alekseidomashevsky@gmail.com");
+		elemToWhom.sendKeys(recipientAddress);
 
 		elemThemeEmail = driver.findElement(By.xpath(prProvider.getProperty("elemThemeEmail")));
-		elemThemeEmail.sendKeys("HomeWork Selenium");
+		elemThemeEmail.sendKeys(themeEmail);
 
 		elemEmailBodyFrame = driver.findElement(By.xpath(prProvider.getProperty("elemEmailBodyFrame")));
 
 		driver.switchTo().frame(elemEmailBodyFrame);
 
 		elemBodyEmail = driver.findElement(By.xpath(prProvider.getProperty("elemBodyEmail")));
-		elemBodyEmail.sendKeys("It's my home work");
+		elemBodyEmail.sendKeys(textEmail);
 
 		driver.switchTo().window(frameBefore);
 		elemButtonSend = driver.findElement(By.xpath(prProvider.getProperty("elemButtonSend")));

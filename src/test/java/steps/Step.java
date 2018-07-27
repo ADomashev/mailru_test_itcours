@@ -37,12 +37,12 @@ public class Step {
 	}
 
 	// String toWhom, String themeEmail, String textEmail
-	public void writeMail() {
+	public void writeLetter(String recipientAddress, String themeEmail, String textEmail) {
 
 		BoxMailPage boxMailPage = new BoxMailPage(driver);
 		boxMailPage.pressButtonWriteMail();
 		EmailWritePage emailWritePage = new EmailWritePage(driver);
-		emailWritePage.writeLetter();
+		emailWritePage.writeLetter(recipientAddress,themeEmail,textEmail);
 	}
 
 	public String findLetter(String destinationEmail) {
