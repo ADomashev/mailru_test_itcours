@@ -19,7 +19,7 @@ public class PropertyProvider {
 		try (InputStream input = new FileInputStream(fileName)) {
 			result.load(input);
 		} catch (FileNotFoundException e) {
-			System.out.println("File "+fileName +" not found");
+			System.out.println("File " + fileName + " not found");
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.out.println("Problem with input stream: ");
@@ -28,7 +28,7 @@ public class PropertyProvider {
 
 		return result;
 	}
-	
+
 	public String getProperty(String propertyName) {
 		return properties.getProperty(propertyName);
 	}

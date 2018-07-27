@@ -9,11 +9,8 @@ public class MainPage extends BasePage {
 	public static final String URL = "https://mail.ru/";
 
 	private WebElement loginField;
-
 	private WebElement passField;
-
 	private WebElement submitButton;
-
 	private WebElement nameEmail;
 
 	public MainPage(WebDriver driver) {

@@ -6,17 +6,15 @@ import org.testng.annotations.BeforeTest;
 import steps.Step;
 
 public class BaseTest {
-	
-	protected Step steps; 
-	
+
+	protected Step steps;
+
 	@BeforeTest
 	public void initSteps() {
-		
 		steps = new Step();
 		steps.initBrowser();
-		
 	}
-	
+
 	@AfterTest
 	public void closeDriver() {
 		steps.closeDriver();
